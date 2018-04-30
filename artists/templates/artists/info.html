@@ -1,0 +1,35 @@
+{% extends 'artists/base.html' %}
+{% load static %}
+
+{% block content %}
+  <div class="row">
+    <h1 class="title"><a href="{{ artist.href }}" id="name">{{ artist.name }}</a></h1>
+  </div>
+  <div class="row">
+    <div class="col-md-3" id="artist-info">
+      {% if artist %}
+        <p>RANK: {{ artist.rank }}</p>
+        <p>LAST WEEK: {{ artist.last_week }}</p>
+        <p>WEEKS ON CHART: {{ artist.weeks_on_chart }}</p>
+        <p>PEAK RANK: {{ artist.peak_position }}</p>
+      {% else %}
+          <p>No information available.</p>
+      {% endif %}
+    </div>
+    <div class="col-md-9">
+      <h6>Artist Gigography</h6>
+      <div id="map"></div>
+    </div>
+  </div>
+  <div class="row">
+    <h6><a href="../">Go Back to Artists</a></h6>
+  </div>
+{% endblock %}
+
+{% block script %}
+  <script src="{% static 'artists/js/songkick.js' %}"></script>
+  <script src="{% static 'artists/js/map.js' %}"></script>
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCp1OA9axnroJk1JBqwWFAO7FTO_3J0ym8&callback=initMap">
+  </script>
+{% endblock %}

@@ -1,0 +1,30 @@
+body {
+  /* background-color: #993300 !important */
+}
+
+.center-vertical {
+  position: absolute;
+  top: 50%;
+  transform: translateY(50%);
+}
+
+a {
+  color: green !important
+}
+
+#title {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+#artist-window, #artist-bar, #map, #artist-info {
+  min-height: 350px;
+  height: 50vh;
+  width: 100%;
+}
+
+#scrollable {
+  overflow: auto;
+  height: 50vh;
+  background-color: white;
+}
